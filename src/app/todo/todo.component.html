@@ -3,7 +3,7 @@
 <button (click)="sendTodo()" [disabled]="!inputValue">Send</button>
 
 <ol>
-  <li *ngFor="let item of cualquiercosa">
-    {{ item }}
+  <li *ngFor="let todo of todos">
+    {{ todo }}
   </li>
 </ol>

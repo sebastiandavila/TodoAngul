@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
   inputValue: any;
-  cualquiercosa: Array<String>=[];
+  todos: Array<String>=[];
   constructor() { }
 
   ngOnInit(): void {
@@ -15,7 +15,7 @@ export class TodoComponent implements OnInit {
 
   sendTodo(){
     
-    this.cualquiercosa.push(this.inputValue);
+    this.todos.push(this.inputValue);
     this.inputValue="";
   }
 
