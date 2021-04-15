@@ -14,9 +14,13 @@ export class TodoComponent implements OnInit {
   }
 
   sendTodo(){
-    this.inputValue==""?this.todos.push(this.inputValue.trim()):alert("No se pueden insertar tareas vacias");
     
-    this.inputValue="";
+    
+    if(this.inputValue.trim()!==""){
+      this.todos.push(this.inputValue);
+      this.inputValue="";
+    }
+    else{alert("Ingrese un valor valido")}
   }
 
 }
