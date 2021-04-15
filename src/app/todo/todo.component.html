@@ -1,5 +1,5 @@
 <p>todo works!</p>
-<input type="text" placeholder="Ingresar algo aqui" [(ngModel)]="inputValue" />
+<input type="text" placeholder="Ingresar algo aqui" [(ngModel)]="inputValue" autofocus="autofocus"/>
 <button (click)="sendTodo()" [disabled]="!inputValue">Send</button>
 
 <ol>

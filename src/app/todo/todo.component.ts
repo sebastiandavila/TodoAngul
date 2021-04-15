@@ -14,8 +14,8 @@ export class TodoComponent implements OnInit {
   }
 
   sendTodo(){
+    this.inputValue==""?this.todos.push(this.inputValue.trim()):alert("No se pueden insertar tareas vacias");
     
-    this.todos.push(this.inputValue);
     this.inputValue="";
   }
 
