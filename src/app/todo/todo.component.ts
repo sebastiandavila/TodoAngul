@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {  TodoItem } from "./TodoItem";
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class TodoComponent implements OnInit {
   inputValue: any;
   idgenerate:number;
-  todos: Array<String>=[];
+  todos: Array<TodoItem>=[];
   checkedAll:Boolean=false;
+  
   constructor() { this.idgenerate=1;
     
   }
@@ -19,8 +20,8 @@ export class TodoComponent implements OnInit {
 
   sendTodo(){
     if(this.inputValue.trim()!==""){
-
-      this.todos.push(this.inputValue);
+    
+      this.todos.push(new TodoItem(this.inputValue, false));
       this.inputValue="";
     }
     else{alert("Ingrese un valor valido")}
@@ -28,9 +29,19 @@ export class TodoComponent implements OnInit {
   deleteTodo(todo:any){
   
   this.todos = this.todos.filter(tod => tod!=todo)
+  
   }
   seleccionartodo(){
-    this.checkedAll=!this.checkedAll;
+    this.todos.forEach(todo => todo.ChangeDoneAll(this.checkedAll))
+    this.checkedAll = !this.checkedAll;
+  }
+
+  changeDone(todo:TodoItem)
+  {
+    todo.ChangeDone();
+  }
+  deleteTodosDone(){
+    this.todos = this.todos.filter(tod => tod.done!=true)
   }
 
 }
