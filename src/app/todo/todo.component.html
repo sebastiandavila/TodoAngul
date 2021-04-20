@@ -5,6 +5,11 @@
 
 <ol>
   <li *ngFor="let todo of todos">
-    {{ todo }}
+      <input type="checkbox" [checked]=checkedAll/>
+    {{todo}}
+    <button (click)="deleteTodo(todo)">Eliminar</button>
   </li>
 </ol>
+
+<label ><input (click)="seleccionartodo()" type="checkbox"/>Seleccionar todirijillo</label>
+
