@@ -10,9 +10,12 @@
 
     ChangeDone(){
     this.done = !this.done;
+
     }
     ChangeDoneAll(checkedAll:Boolean){
         this.done = !checkedAll;
+
+
         }
   }
   

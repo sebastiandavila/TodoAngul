@@ -10,6 +10,7 @@ export class TodoComponent implements OnInit {
   idgenerate:number;
   todos: Array<TodoItem>=[];
   checkedAll:Boolean=false;
+ 
   
   constructor() { this.idgenerate=1;
     

@@ -2,7 +2,7 @@
 
 <input (keyup.enter)="sendTodo()" type="text" placeholder="Ingresar algo aqui" [(ngModel)]="inputValue" autofocus="autofocus"/>
 <button (click)="sendTodo()" [disabled]="!inputValue">Send</button>
-
+<p>cantidad:{{todos.length}} {{todos.length==1?" item":" items"}}</p>
 <ol>
   <li *ngFor="let todo of todos">
       <input type="checkbox" [checked]=todo.done (click)="changeDone(todo)"/>  
@@ -12,6 +12,6 @@
   </li>
 </ol>
 
-<label ><input (click)="seleccionartodo()" type="checkbox"/>Seleccionar todirijillo</label>
-<button (click)="deleteTodosDone()">Eliminar los todos seleccionados</button>
+<label ><input (click)="seleccionartodo()" type="checkbox"/>Seleccionar todos los items</label>
+<button (click)="deleteTodosDone()" >Eliminar los items completados</button>
 
